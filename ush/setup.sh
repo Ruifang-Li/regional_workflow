@@ -2551,10 +2551,15 @@ ENSMEM_NAMES=( $( printf "\"%s\" " "${ENSMEM_NAMES[@]}" ))
 FV3_NML_ENSMEM_FPS=( $( printf "\"%s\" " "${FV3_NML_ENSMEM_FPS[@]}" ))
 
 # for data assimilation
-OBSPATH="/public/data/grids/rap/obs"
-OBSPATH_NSSLMOSIAC="/public/data/radar/mrms"
-LIGHTNING_ROOT="/public/data/lightning"
-ENKF_FCST="/lfs4/BMC/public/data/grids/enkf/atm_v15"
+#OBSPATH="/public/data/grids/rap/obs"
+#OBSPATH_NSSLMOSIAC="/public/data/radar/mrms"
+#LIGHTNING_ROOT="/public/data/lightning"
+#ENKF_FCST="/lfs4/BMC/public/data/grids/enkf/atm_v15"
+# for retro
+OBSPATH="/mnt/lfs4/BMC/wrfruc/Ruifang.Li/data/obs_rap"
+OBSPATH_NSSLMOSIAC="/mnt/lfs4/BMC/wrfruc/Ruifang.Li/data/reflectivity"
+LIGHTNING_ROOT="/mnt/lfs4/BMC/wrfruc/aback/lightning_for_rrfs/fake_vaisala"
+ENKF_FCST="/mnt/lfs4/BMC/wrfruc/Ruifang.Li/data/enkf/atm_v15"
 
 FIXgsi="${FIXrrfs}/fix_gsi"
 FIXcrtm="${FIXrrfs}/fix_crtm"

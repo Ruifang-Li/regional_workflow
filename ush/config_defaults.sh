@@ -1252,6 +1252,15 @@ DO_DACYCLE="FALSE"
 #
 #-----------------------------------------------------------------------
 #
+# Set parameters associated with running retrospective experiments.  Definitions:
+#
+# DO_RETRO:
+# Flag turn on the retrospective experiments.
+#
+DO_RETRO="FALSE"
+#
+#-----------------------------------------------------------------------
+#
 # Set default stochastic physics options
 # For detailed documentation of these parameters, see:
 # https://stochastic-physics.readthedocs.io/en/ufs_public_release/namelist_options.html

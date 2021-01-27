@@ -460,7 +460,8 @@ and analysis or forecast (anl_or_fcst):
       fcst_hh=( $( printf "%02d " "${lbc_spec_fhrs[@]}" ) )
 
       if [ "${MACHINE}" = "JET" ]; then 
-        prefix="wrfnat_rr_"
+        #prefix="wrfnat_rr_"
+        prefix="wrfnat_130_"
         suffix=".grib2"
       else
         prefix="${yy}${ddd}${hh}${mn}"

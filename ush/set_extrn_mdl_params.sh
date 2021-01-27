@@ -124,7 +124,8 @@ else
       EXTRN_MDL_SYSBASEDIR_ICS="/scratch2/BMC/public/data/gsd/hrrr/conus/wrfnat"
       ;;
     "JET")
-      EXTRN_MDL_SYSBASEDIR_ICS="/misc/whome/rtrr/hrrr"
+      #EXTRN_MDL_SYSBASEDIR_ICS="/misc/whome/rtrr/hrrr"
+      EXTRN_MDL_SYSBASEDIR_ICS="/mnt/lfs4/BMC/wrfruc/Ruifang.Li/data/hrrr/conus/wrfnat"
       EXTRN_MDL_PREFIX_ICS="wrfnat_hrconus"
       ;;
     "CHEYENNE")
@@ -251,7 +252,8 @@ else
       EXTRN_MDL_SYSBASEDIR_LBCS="/scratch2/BMC/public/data/gsd/rap/full/wrfnat"
       ;;
     "JET")
-      EXTRN_MDL_SYSBASEDIR_LBCS="/misc/whome/rtrr/rap"
+      #EXTRN_MDL_SYSBASEDIR_LBCS="/misc/whome/rtrr/rap"
+      EXTRN_MDL_SYSBASEDIR_LBCS="/mnt/lfs4/BMC/wrfruc/Ruifang.Li/data/rap/130_conus/wrfnat"
       ;;
     "CHEYENNE")
       EXTRN_MDL_SYSBASEDIR_LBCS="dummy_value"
