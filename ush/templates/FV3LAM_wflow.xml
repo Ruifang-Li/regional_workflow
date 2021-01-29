@@ -120,7 +120,7 @@ tasks; and the "FCST" type is used for the RUN_FCST_TN task.
   <cycledef group="at_start">{{ cdate_first_cycl.strftime("%M %H %d %m %Y *") }}</cycledef>
   <cycledef group="forecast">{{ cdate_first_cycl.strftime("%Y%m%d%H%M") }} {{ cdate_last_cycl.strftime("%Y%m%d%H%M") }} {{ cycl_freq }}</cycledef>
 {%- if do_dacycle %}
-  <cycledef group="dacycle">00 03,06,09,15,18,21 {{cdate_first_cycl.strftime("%d") }}-{{ cdate_last_cycl.strftime("%d") }} {{ cdate_first_cycl.strftime("%m") }} {{cdate_first_cycl.strftime("%Y") }} *</cycledef>
+  <cycledef group="dacycle">00 01-11,13-23 {{cdate_first_cycl.strftime("%d") }}-{{ cdate_last_cycl.strftime("%d") }} {{ cdate_first_cycl.strftime("%m") }} {{cdate_first_cycl.strftime("%Y") }} *</cycledef>
 {% endif %}
   <cycledef group="archive">{{ cdate_first_arch.strftime("%Y%m%d%H%M") }} {{ cdate_last_arch.strftime("%Y%m%d%H%M") }} 24:00:00</cycledef> 
 
@@ -556,7 +556,7 @@ MODULES_RUN_TASK_FP script.
     <dependency>
       <and>
         <taskdep task="&MAKE_LBCS_TN;"/>
-        <datadep age="00:00:05:00"><cyclestr offset="-3:00:00">&CYCLE_BASEDIR;/@Y@m@d@H/dynf003.nc</cyclestr></datadep>
+        <datadep age="00:00:05:00"><cyclestr offset="-1:00:00">&CYCLE_BASEDIR;/@Y@m@d@H/dynf001.nc</cyclestr></datadep>
         <timedep><cyclestr offset="&START_TIME_CONVENTIONAL;">@Y@m@d@H@M00</cyclestr></timedep>
       </and>
     </dependency>

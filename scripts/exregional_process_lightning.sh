@@ -188,7 +188,8 @@ cp_vrfy ${fixgriddir}/geo_em.d01.nc          geo_em.d01.nc
 #
 #-----------------------------------------------------------------------
 filenum=0
-LIGHTNING_FILE=${LIGHTNING_ROOT}/vaisala/netcdf
+#LIGHTNING_FILE=${LIGHTNING_ROOT}/vaisala/netcdf
+LIGHTNING_FILE=${LIGHTNING_ROOT}
 for n in 00 05 ; do
   filename=${LIGHTNING_FILE}/${YYJJJHH}${n}0005r
   if [ -r ${filename} ]; then
