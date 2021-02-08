@@ -122,8 +122,10 @@ tasks; and the "FCST" type is used for the RUN_FCST_TN task.
 {%- if do_dacycle %}
   <cycledef group="dacycle">00 01-11,13-23 {{cdate_first_cycl.strftime("%d") }}-{{ cdate_last_cycl.strftime("%d") }} {{ cdate_first_cycl.strftime("%m") }} {{cdate_first_cycl.strftime("%Y") }} *</cycledef>
 {% endif %}
+{%- if do_retro %}
+{% else %}
   <cycledef group="archive">{{ cdate_first_arch.strftime("%Y%m%d%H%M") }} {{ cdate_last_arch.strftime("%Y%m%d%H%M") }} 24:00:00</cycledef> 
-
+{% endif %}
   <log>
     <cyclestr>&LOGDIR;/FV3LAM_wflow.log</cyclestr>
   </log>

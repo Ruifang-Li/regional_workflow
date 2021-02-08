@@ -148,6 +148,7 @@
     fhlwr = 1200.0
     fhswr = 1200.0
     fhzero = 1.0
+    fh_dfi_radar = 0, 0.25, 0.50, 0.75, 1.0 
     h2o_phys = .true.
     hybedmf = .false.
     iaer = 111
