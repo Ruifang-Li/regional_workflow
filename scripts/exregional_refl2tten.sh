@@ -198,9 +198,27 @@ fi
 PROCESS_RADARREF_PATH=${CYCLE_DIR}/PROCESS_RADARREF
 PROCESS_LIGHTNING_PATH=${CYCLE_DIR}/process_lightning
 
-obs_file=${PROCESS_RADARREF_PATH}/RefInGSI3D.dat
+obs_file=${PROCESS_RADARREF_PATH}/00/RefInGSI3D.dat
 if [ -r "${obs_file}" ]; then
    cp_vrfy "${obs_file}" "RefInGSI3D.dat_01"
+else
+   print_info_msg "$VERBOSE" "Warning: ${obs_file} does not exist!"
+fi
+obs_file=${PROCESS_RADARREF_PATH}/15/RefInGSI3D.dat
+if [ -r "${obs_file}" ]; then
+   cp_vrfy "${obs_file}" "RefInGSI3D.dat_02"
+else
+   print_info_msg "$VERBOSE" "Warning: ${obs_file} does not exist!"
+fi
+obs_file=${PROCESS_RADARREF_PATH}/30/RefInGSI3D.dat
+if [ -r "${obs_file}" ]; then
+   cp_vrfy "${obs_file}" "RefInGSI3D.dat_03"
+else
+   print_info_msg "$VERBOSE" "Warning: ${obs_file} does not exist!"
+fi
+obs_file=${PROCESS_RADARREF_PATH}/45/RefInGSI3D.dat
+if [ -r "${obs_file}" ]; then
+   cp_vrfy "${obs_file}" "RefInGSI3D.dat_04"
 else
    print_info_msg "$VERBOSE" "Warning: ${obs_file} does not exist!"
 fi
