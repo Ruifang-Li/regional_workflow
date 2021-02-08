@@ -157,10 +157,13 @@ YYYYMMDD=${YYYYMMDDHH:0:8}
 #
 #-----------------------------------------------------------------------
 #
+for bigmin in 00 15 30 45; do
+
+mkdir_vrfy ${WORKDIR}/${bigmin}
 print_info_msg "$VERBOSE" "
 Getting into working directory for radar reflectivity process ..."
 
-cd ${WORKDIR}
+cd ${WORKDIR}/${bigmin}
 
 fixdir=$FIXgsi/
 fixgriddir=$FIXgsi/${PREDEF_GRID_NAME}
@@ -191,11 +194,17 @@ NSSL=${OBSPATH_NSSLMOSIAC}
 
 mrms="MRMS_MergedReflectivityQC"
 
-echo "${MM0} ${MM1} ${MM2} ${MM3}"
+
+echo "$((bigmin+MM0)) $((bigmin+MM1)) $((bigmin+MM2)) $((bigmin+MM3))"
 
 # Link to the MRMS operational data
-for min in ${MM0} ${MM1} ${MM2} ${MM3}
+for min2 in $((bigmin+MM0)) $((bigmin+MM1)) $((bigmin+MM2)) $((bigmin+MM3))
 do
+  if [ ${min2} -lt 10 ]; then
+    min=0${min2}
+  else
+    min=${min2}
+  fi
   echo "Looking for data valid:"${YYYY}"-"${MM}"-"${DD}" "${HH}":"${min}
   s=0
   while [[ $s -le 59 ]]; do
@@ -295,8 +304,11 @@ fi
 #
 #-----------------------------------------------------------------------
 #
-$APRUN ./process_NSSL_mosaic.exe > stdout 2>&1 || print_err_msg "\
+$APRUN ../process_NSSL_mosaic.exe > stdout 2>&1 || print_err_msg "\
 Call to executable to run radar refl process returned with nonzero exit code."
+
+done # done with the bigmin for-loop
+
 #
 #-----------------------------------------------------------------------
 #
